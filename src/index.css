@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-wedding-offwhite text-wedding-dark font-sans scroll-smooth;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+.glass {
+  @apply bg-white/70 backdrop-blur-md border border-white/20;
+}
+
+.section-padding {
+  @apply py-20 px-6 md:px-12 lg:px-24;
+}
+
+.watercolor-effect {
+  filter: contrast(1.1) brightness(1.1) saturate(1.2);
+  mask-image: radial-gradient(circle at center, black 40%, rgba(0,0,0,0.8) 70%, transparent 100%);
+  -webkit-mask-image: radial-gradient(circle at center, black 40%, rgba(0,0,0,0.8) 70%, transparent 100%);
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
